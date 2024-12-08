@@ -27,11 +27,12 @@ export class Sorting extends React.Component {
 
     return (
       <div className="sorting-buttons-container">
-        <ButtonGroup toggle >
+        <ButtonGroup >
           {modeRow1.map((mode) => {
             const checked = this.props.mode === mode;
             return (
               <ToggleButton
+                id={`sort-${mode}`}
                 key={mode}
                 type="checkbox"
                 variant={checked ? 'primary' : 'secondary'}
@@ -43,11 +44,12 @@ export class Sorting extends React.Component {
             );
           })}
         </ButtonGroup>
-        <ButtonGroup toggle >
+        <ButtonGroup >
           {modeRow2.map((mode) => {
             const checked = this.props.mode === mode;
             return (
               <ToggleButton
+                id={`sort-${mode}`}
                 key={mode}
                 type="checkbox"
                 variant={checked ? 'primary' : 'secondary'}

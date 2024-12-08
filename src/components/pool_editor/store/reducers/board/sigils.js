@@ -4,7 +4,7 @@ import { factions } from 'lib/card_classification';
 import cardData from 'lib/card_data';
 import { initializeStacksAndSigils } from 'lib/board_initialization';
 import { BoardTypes } from 'lib/board_types';
-import { FETCH_CARDS_FROM_EXPORT } from 'components/pool_editor/store/actions/board';
+import { GET_CARDS_FROM_EXPORT } from 'components/pool_editor/store/actions/board';
 import { ADD_SIGILS, SUB_SIGILS } from 'components/pool_editor/store/actions/sigils';
 import { SWITCH_BOARDS } from 'components/pool_editor/store/actions/board';
 
@@ -41,7 +41,7 @@ export default boardType => (state = initialState, action) => {
     return produce(state, (draft) => {
       draft[action.faction].count = action.count;
     });
-  case FETCH_CARDS_FROM_EXPORT:
+  case GET_CARDS_FROM_EXPORT:
     return produce(state, (draft) => {
       const [, sigils] = initializeStacksAndSigils(action.cards);
       factions.forEach(faction => draft[faction].count = sigils[faction].count);

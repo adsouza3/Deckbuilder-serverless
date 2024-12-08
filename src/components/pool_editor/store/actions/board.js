@@ -79,14 +79,14 @@ export const moveCardsBetweenBoards = boardType => (dispatch, getState) => {
 };
 
 export const SET_CARD_DEPENDENCIES = 'SET_CARD_DEPENDENCIES';
-export const FETCH_CARDS_FROM_EXPORT = 'FETCH_CARDS_FROM_EXPORT';
+export const GET_CARDS_FROM_EXPORT = 'GET_CARDS_FROM_EXPORT';
 export const getCardsFromExport = (primaryCards, builtCards = '', previousPoolCards = '') => {
   return (dispatch, getState) => {
     const { present } = getState();
 
-    const cards = parseDeck(primaryCards);
+    const cards = parseDeck(primaryCards, builtCards, previousPoolCards);
     dispatch({
-      type: FETCH_CARDS_FROM_EXPORT,
+      type: GET_CARDS_FROM_EXPORT,
       cards: cards,
       previousMarket: [] // TODO
     });

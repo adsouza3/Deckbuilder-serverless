@@ -43,6 +43,7 @@ const Filters = ({
       cards={cards}
       clear={clearFilters}
       custom={custom}
+      filterType="filter"
       selectedBuildStatuses={buildStatuses}
       selectedCosts={costs}
       selectedFactions={factions}

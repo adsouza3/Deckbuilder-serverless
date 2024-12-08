@@ -55,11 +55,11 @@ export class Sidebar extends React.Component {
           <Accordion.Item eventKey="0">
             <Accordion.Header>{title}</Accordion.Header>
             <Accordion.Body>
-              <Card>
-                <Card.Body>
+              {/* <Card>
+                <Card.Body> */}
                   <Component />
-                </Card.Body>
-              </Card>
+                {/* </Card.Body>
+              </Card> */}
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>

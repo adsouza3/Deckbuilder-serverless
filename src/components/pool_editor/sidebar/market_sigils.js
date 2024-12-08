@@ -16,6 +16,7 @@ const MarketSigils = ({ sigils, addSigils, subSigils }) => {
           const checked = !!sigils[faction].count;
           return (
             <ToggleButton
+              id={`market-sigils-${faction}`}
               key={faction}
               className="filter-button"
               type="checkbox"

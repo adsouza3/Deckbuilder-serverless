@@ -43,6 +43,7 @@ const Highlights = ({
       cards={cards}
       clear={clearHighlights}
       custom={custom}
+      filterType="highlight"
       selectedBuildStatuses={buildStatuses}
       selectedCosts={costs}
       selectedFactions={factions}

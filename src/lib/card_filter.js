@@ -98,7 +98,7 @@ const cardMatchesText = (card, filters) => {
     card.name.toLowerCase().includes(filterText) ||
     card.cardType.toLowerCase().includes(filterText) ||
     card.cardText.toLowerCase().includes(filterText) ||
-    (card.unitType || '').toLowerCase().includes(filterText)
+    (card.unitType || []).join(',').toLowerCase().includes(filterText)
   );
 };
 

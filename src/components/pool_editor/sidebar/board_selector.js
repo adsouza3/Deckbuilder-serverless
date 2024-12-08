@@ -19,6 +19,7 @@ export const BoardSelector = ({ selectedBoard, switchBoards }) => {
         const checked = selectedBoard === boardType;
         return (
           <ToggleButton
+            id={`board-${boardType}`}
             checked={checked}
             variant={checked ? 'primary' : 'secondary'}
             key={boardType}

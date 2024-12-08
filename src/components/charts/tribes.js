@@ -13,7 +13,7 @@ const TribeChart = ({ cards, filters }) => {
   let data = {};
   filteredCards.forEach((card) => {
     if (card.cardType.includes('unit')) {
-      JSON.parse(card.unitType || '[]').forEach((type) => {
+      (card.unitType || []).forEach((type) => {
         data[type] = data[type] ? data[type] + 1 : 1;
       });
       // TODO payoffs

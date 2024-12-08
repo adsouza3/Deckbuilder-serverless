@@ -21,6 +21,7 @@ const ConsistencyControls = ({ displayMode, sources, sourceSetter, onDisplayMode
           const checked = displayMode === mode;
           return (
             <ToggleButton
+              id={`consistency-${mode}`}
               checked={checked}
               variant={checked ? 'primary' : 'secondary'}
               key={mode}

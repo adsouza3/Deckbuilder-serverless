@@ -36,7 +36,7 @@ const FocusModal = ({ clearFocusedCard, dependencyCards, focus, sets }) => {
           {cardSetDescription}
         </div>
         <div className="focused-card-info">
-          {focus.abilities.length && (
+          {(focus.abilities || []).length && (
             <div className="focused-card-abilities">
               {focus.abilities.map((ability) => {
                 return <div className="focused-card-ability" key={ability.name}>
@@ -47,7 +47,7 @@ const FocusModal = ({ clearFocusedCard, dependencyCards, focus, sets }) => {
             </div>
           )}
           <div className="focused-card-dependencies">
-            {focus.cardDependencyNames.map(camelize).map((name, i) => {
+            {(focus.cardDependencyNames || []).map(camelize).map((name, i) => {
               const dependencyCard = dependencyCards[name];
               if (dependencyCard) {
                 return (

@@ -23,6 +23,7 @@ const Filters = ({
   clear,
   selectedCosts,
   custom,
+  filterType,
   selectedBuildStatuses,
   selectedFactions,
   selectedRarities,
@@ -93,12 +94,15 @@ const Filters = ({
             const checked = selected.includes(option);
             return (
               <ToggleButton
-                key={option}
+                id={`${filterType}-${label.toLowerCase()}-${option}`}
+                key={`${filterType}-${label.toLowerCase()}-${option}`}
                 className="filter-button"
                 type="checkbox"
                 variant={checked ? 'primary' : 'secondary'}
                 checked={checked}
-                onChange={() => onChange(option, !checked)}
+                onChange={() => {
+                  onChange(option, !checked);
+                }}
               >
                 <Icon type={type} option={option} />
               </ToggleButton>
@@ -172,7 +176,8 @@ const Filters = ({
           onClick: () => setSearch('')
         }}
         className="filter-search"
-        label="Search:"
+        placeholder="Search..."
+        size="small"
         value={text}
         onChange={handleSearchChange}
       />
@@ -193,6 +198,7 @@ Filters.propTypes = {
   cards: PropTypes.array.isRequired,
   clear: PropTypes.func.isRequired,
   custom: PropTypes.string,
+  filterType: PropTypes.string.isRequired,
   selectedBuildStatuses: PropTypes.arrayOf(PropTypes.string),
   selectedCosts: PropTypes.arrayOf(PropTypes.string),
   selectedFactions: PropTypes.arrayOf(PropTypes.string),

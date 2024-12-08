@@ -5,7 +5,7 @@ import {
   ADD_CARDS,
   CARD_DRAG_BEGIN,
   CARD_DRAG_END,
-  FETCH_CARDS_FROM_EXPORT,
+  GET_CARDS_FROM_EXPORT,
   SET_WINDOW_SIZE,
   SWITCH_BOARDS
 } from 'components/pool_editor/store/actions/board';
@@ -80,7 +80,7 @@ export default boardType => (state = initialState, action) => {
       }
     });
   }
-  case FETCH_CARDS_FROM_EXPORT:
+  case GET_CARDS_FROM_EXPORT:
     return produce(state, (draft) => {
       if (boardType === BoardTypes.MAIN) {
         const [stacks] = initializeStacksAndSigils(action.cards);

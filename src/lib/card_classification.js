@@ -89,11 +89,12 @@ export const classifyFaction = (card, faction, options = {}) => {
 };
 
 export const classifyRarity = (card, rarity) => {
-  return card.rarity === rarity;
+  return card.rarity.toLowerCase() === rarity;
 };
 
 export const classifyType = (card, type) => {
-  const { cardType } = card;
+  let { cardType } = card;
+  cardType = cardType.toLowerCase();
 
   switch (type) {
   case Types.ATTACHMENT:

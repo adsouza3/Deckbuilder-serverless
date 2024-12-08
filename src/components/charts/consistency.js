@@ -13,8 +13,6 @@ const ConsistencyChart = ({ uniqueSpells, granularity }) => {
       .reduce((acc, spell) =>  acc + spell.count, 0));
   }
 
-  console.log(dataPoints);
-
   const data = {
     labels,
     datasets: [

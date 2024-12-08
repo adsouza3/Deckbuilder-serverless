@@ -27,11 +27,12 @@ export class Grouping extends React.Component {
 
     return (
       <div className="grouping-buttons-container">
-        <ButtonGroup toggle >
+        <ButtonGroup >
           {modeRow1.map((mode) => {
             const checked = this.props.mode === mode;
             return (
               <ToggleButton
+                id={`grouping-${mode}`}
                 key={mode}
                 type="checkbox"
                 variant={checked ? 'primary' : 'secondary'}
@@ -43,7 +44,7 @@ export class Grouping extends React.Component {
             );
           })}
         </ButtonGroup>
-        <ButtonGroup toggle >
+        <ButtonGroup >
           {modeRow2.map((mode) => {
             const checked = this.props.mode === mode;
             return (
