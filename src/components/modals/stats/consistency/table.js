@@ -5,6 +5,8 @@ import _ from 'lodash';
 
 import { Popup, Table } from 'semantic-ui-react';
 
+import { getImageUrl } from 'lib/image_urls';
+
 import Influence from './influence';
 
 const ConsistencyTable = ({ uniqueSpells }) => {
@@ -59,7 +61,7 @@ const ConsistencyTable = ({ uniqueSpells }) => {
                 trigger={<div>{card.name}</div>}
               >
                 <Popup.Content>
-                  <img width="150px" src={card.imageUrl} />
+                  <img width="150px" src={getImageUrl(card)} />
                 </Popup.Content>
               </Popup>
             </Table.Cell>
@@ -78,7 +80,6 @@ ConsistencyTable.propTypes = {
   uniqueSpells: PropTypes.arrayOf(PropTypes.shape({
     cost: PropTypes.number.isRequired,
     count: PropTypes.number.isRequired,
-    imageUrl: PropTypes.string,
     influence: PropTypes.string,
     name: PropTypes.string.isRequired,
     probability: PropTypes.number

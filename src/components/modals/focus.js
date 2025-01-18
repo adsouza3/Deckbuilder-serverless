@@ -6,6 +6,7 @@ import { Modal } from 'react-bootstrap';
 
 import { camelize } from 'humps';
 
+import { getImageUrl } from 'lib/image_urls';
 import { clearFocusedCard } from 'components/pool_editor/store/actions/focus';
 
 const FocusModal = ({ clearFocusedCard, dependencyCards, focus, sets }) => {
@@ -30,7 +31,7 @@ const FocusModal = ({ clearFocusedCard, dependencyCards, focus, sets }) => {
           <img 
             className="focuscard-img"
             draggable="false"
-            src={focus.imageUrl}
+            src={getImageUrl(focus)}
             height="100%"
           />
           {cardSetDescription}
@@ -55,7 +56,7 @@ const FocusModal = ({ clearFocusedCard, dependencyCards, focus, sets }) => {
                     className="dependency-card-img"
                     draggable="false"
                     key={i}
-                    src={dependencyCard.imageUrl}
+                    src={getImageUrl(dependencyCard)}
                   />
                 );
               }

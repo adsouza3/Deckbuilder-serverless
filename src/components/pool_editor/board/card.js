@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 
+import { getImageUrl } from 'lib/image_urls';
 import { isCardFiltered } from 'lib/card_filter';
 import { Rarities } from 'lib/card_classification';
 import { cardDragBegin, cardDragEnd } from 'components/pool_editor/store/actions/board';
@@ -19,7 +20,7 @@ class Card extends React.Component {
   static propTypes = {
     card: PropTypes.shape({
       id: PropTypes.string.isRequired,
-      imageUrl: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
       rarity: PropTypes.string.isRequired,
     }).isRequired,
     cardDragBegin: PropTypes.func.isRequired,
@@ -123,7 +124,7 @@ class Card extends React.Component {
           <img 
             className="card-img"
             draggable="false"
-            src={card.imageUrl}
+            src={getImageUrl(card)}
             width="150px"
             height="auto"
           />

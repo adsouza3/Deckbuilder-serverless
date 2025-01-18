@@ -15,6 +15,7 @@
     "gapi-script": "^1.2.0",
     "humps": "^2.0.1",
     "lodash": "^4.17.21",
+    "md5": "^2.3.0",
     "quickjs-emscripten": "^0.31.0",
     "react": "^19.0.0",
     "react-ace": "^13.0.0",

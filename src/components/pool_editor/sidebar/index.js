@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Accordion, Card } from 'react-bootstrap';
+import { Accordion } from 'react-bootstrap';
 
 import { getCurrentState } from 'lib/state_helper';
 import { BoardTypes } from 'lib/board_types';

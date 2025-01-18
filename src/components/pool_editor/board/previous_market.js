@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import { getImageUrl } from 'lib/image_urls';
+
 const PreviousMarket = ({ cards, }) => {
   if (cards.length === 0) {
     return null;
@@ -15,7 +17,7 @@ const PreviousMarket = ({ cards, }) => {
           className="previous-market-card-img"
           draggable="false"
           key={i}
-          src={card.imageUrl}
+          src={getImageUrl(card)}
         />
       ))}
     </div>

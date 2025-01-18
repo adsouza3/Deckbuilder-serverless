@@ -7,6 +7,7 @@ import { Button, Modal } from 'react-bootstrap';
 import AsyncSelect from 'react-select/async';
 
 import api from 'lib/api';
+import { getImageUrl } from 'lib/image_urls';
 
 import './styles.scss';
 
@@ -58,7 +59,7 @@ const AddCardModal = ({ show, onAddCard, onHide, searchPath }) => {
           <div className="add-card-preview">
             <img 
               draggable="false"
-              src={cards[selection].imageUrl}
+              src={getImageUrl(cards[selection])}
             />
           </div>
         )}

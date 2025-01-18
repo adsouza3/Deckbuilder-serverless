@@ -58,7 +58,6 @@ ConsistencyChart.propTypes = {
   uniqueSpells: PropTypes.arrayOf(PropTypes.shape({
     cost: PropTypes.number.isRequired,
     count: PropTypes.number.isRequired,
-    imageUrl: PropTypes.string,
     influence: PropTypes.string,
     name: PropTypes.string.isRequired,
     probability: PropTypes.number

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { getImageUrl } from 'lib/image_urls';
+
 const MarketCard = ({ card, selectedIds, onCardClick, onContextMenu }) => {
   return (
     <div
@@ -13,7 +15,7 @@ const MarketCard = ({ card, selectedIds, onCardClick, onContextMenu }) => {
         <img 
           className="card-img"
           draggable="false"
-          src={card.imageUrl}
+          src={getImageUrl(card)}
           width="150px"
           height="auto"
         />
@@ -30,7 +32,7 @@ const MarketCard = ({ card, selectedIds, onCardClick, onContextMenu }) => {
 MarketCard.propTypes = {
   card: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    imageUrl: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
   }),
   selectedIds: PropTypes.array,
   onCardClick: PropTypes.func,
