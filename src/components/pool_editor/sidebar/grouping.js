@@ -22,33 +22,14 @@ export class Grouping extends React.Component {
   }
 
   render() {
-    const modeRow1 = groupingModes.slice(0, 2);
-    const modeRow2 = groupingModes.slice(2);
-
     return (
       <div className="grouping-buttons-container">
         <ButtonGroup >
-          {modeRow1.map((mode) => {
+          {groupingModes.map((mode) => {
             const checked = this.props.mode === mode;
             return (
               <ToggleButton
                 id={`grouping-${mode}`}
-                key={mode}
-                type="checkbox"
-                variant={checked ? 'primary' : 'secondary'}
-                checked={checked}
-                onChange={e => this.onChange(mode, e.currentTarget.checked)}
-              >
-                {_.capitalize(mode)}
-              </ToggleButton>
-            );
-          })}
-        </ButtonGroup>
-        <ButtonGroup >
-          {modeRow2.map((mode) => {
-            const checked = this.props.mode === mode;
-            return (
-              <ToggleButton
                 key={mode}
                 type="checkbox"
                 variant={checked ? 'primary' : 'secondary'}
